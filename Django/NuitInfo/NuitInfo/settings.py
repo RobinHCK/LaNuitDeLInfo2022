@@ -123,3 +123,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'sis/static')  # where I want to host the static files i.e img, js & css
+]

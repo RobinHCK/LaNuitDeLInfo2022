@@ -16,6 +16,7 @@
       {% block sidebar %}
         <ul class="sidebar-nav">
           <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'data_story' %}">Data Story</a></li>
           <li><a href="{% url 'generation_logo' %}">Générateur de logos</a></li>
           <li><a href="{% url 'equipe' %}">Notre équipe</a></li>
         </ul>
@@ -25,4 +26,21 @@
     </div>
   </div>
 </body>
+
+<footer class="text-center text-lg-start" style="background-color: #7bb241;">
+  <div class="container d-flex justify-content-center py-5">
+    <a href="https://www.sida-info-service.org/" style="margin-right:50px">
+      <img src="{% static 'logo_sis/logo-sis-footer.png' %}" width="221", height="71">
+    </a>
+    <a href="https://www.sexualites-info-sante.fr/" style="margin-left:50px">
+      <img src="{% static 'logo_sis/logo4santex.png'%}" width="221", height="71">
+    </a>
+  </div>
+
+  <!-- Copyright -->
+  <div class="text-center text-white p-3" style="background-color: #4a820c;">
+    © 2022 Copyright: Pas eu le temps de le déposer, une prochaine fois peut-être!
+  </div>
+  <!-- Copyright -->
+</footer>
 </html>
