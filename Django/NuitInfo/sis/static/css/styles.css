@@ -22,6 +22,34 @@
   height:100%;
 }
 
-#id_sentence {
+#id_sentence, #id_text_overlay {
+  margin-right: 20px;
   margin-left: 20px;
+}
+
+.carousel {
+  width:  256px;
+  height: 256px;
+}
+
+.centering-div {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.centered-element{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sr-only {
+  color: black;
+}
+
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
 }

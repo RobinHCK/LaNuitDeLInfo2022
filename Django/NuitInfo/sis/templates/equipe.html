@@ -1,15 +1,19 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>  
+  
   <h1>Notre équipe</h1>
   <p>Pour la Nuit de l'Info 2022, notre équipe était composée des 5 personnes que voici :</p>
 
   {% load static %}
-  <ul>
+  <ul class="no-bullets">
     <li><img class="team-img" src="{% static 'images/javidan.png' %}" width="150" height="150" alt="Abdullayev Javidan"><b>Abdullayev</b> Javidan</li>
     <li><img class="team-img" src="{% static 'images/robin.jpeg' %}"  width="150" height="150" alt="Heckenauer Robin"><b>Heckenauer</b> Robin</li>
     <li><img class="team-img" src="{% static 'images/hadi.jpg' %}"    width="150" height="150" alt="Ismail Fawaz Ali El Hadi"><b>Ismail Fawaz</b> Ali El Hadi</li>
     <li><img class="team-img" src="{% static 'images/elvin.jpeg' %}"  width="150" height="150" alt="Ismayzlzada Elvin"><b>Ismayzlzada</b> Elvin</li>
     <li><img class="team-img" src="{% static 'images/gautier.jpg' %}" width="150" height="150" alt="Pialla Gautier"><b>Pialla</b> Gautier</li>
   </ul>
+
+  <p>Le code de notre projet est disponible sur <a href="https://github.com/RobinHCK/LaNuitDeLInfo2022/">Git <i class='fa fa-github'></i></a></p> 
 {% endblock %}
