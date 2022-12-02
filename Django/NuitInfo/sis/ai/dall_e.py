@@ -4,14 +4,14 @@ import uuid
 import requests
 
 import openai
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 
 OPENAI_KEY = "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"
 PATH_STATIC         = "./sis/static/"
 PATH_LOGO_GENERATED = "logos_generated/"
 PATH_LOGO_SIS		= "logo_sis/logo_sida_{}.png"
 
-def create_DALL_E_image(sentence, size_image):
+def create_DALL_E_image(sentence, text_overlay, size_image):
 	""" Create a DALL-E image and return the URL
 
 	Send a request to the openai API using the personal key.
@@ -38,6 +38,7 @@ def create_DALL_E_image(sentence, size_image):
 	image_url = response['data'][0]['url']
 
 	filename = save_image_from_url(image_url)
+	add_description_on_image(text_overlay, filename)
 	add_logo_on_image(size_image, filename)
 	return filename
 
@@ -70,3 +71,19 @@ def add_logo_on_image(size_image, path_image):
 
 	image.paste(logo,box=(0,0),mask=logo)
 	image.save(os.path.join(PATH_STATIC,path_image))
+
+def add_description_on_image(description, path_image):
+    """ Add a funny description on an image
+
+    (str) description : The description message to put on the image.
+    (str) path_image : The path of the image.
+    (str) path_out : The path where the image with the description will be saved.
+    """
+    path_image = os.path.join(PATH_STATIC, path_image)
+    image = Image.open(path_image).convert('RGB')
+
+    draw = ImageDraw.Draw(image)
+    # Arial path needs to be changed, but fonts works differently on windows and Ubuntu
+    draw.text((10, image.size[0]-50), description, font=ImageFont.truetype("/home/gautier/.local/share/fonts/arial.ttf", size=25), fill="black")
+
+    image.save(path_image)

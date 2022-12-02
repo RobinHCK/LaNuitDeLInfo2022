@@ -41,7 +41,7 @@ def generation_logo(request):
     return render(request, 'generation_logo.html', context=context)
  
 
-def generation_logo(request):
+def generation_meme(request):
     # if this is a POST request we need to process the form data
     context={}
     if request.method == 'POST':
@@ -52,12 +52,13 @@ def generation_logo(request):
         # check whether it's valid:
         if form.is_valid():
             sentence = form.cleaned_data['sentence']
+            text_overlay = form.cleaned_data['text_overlay']
             # Generate image
-            image_url = create_DALL_E_image(sentence, 256)
+            image_url = create_DALL_E_image(sentence, text_overlay, 256)
             # Add image to context
             context['image_url'] = image_url
 
 
     context['form'] = ImageGeneratorForm()
-    return render(request, 'generation_logo.html', context=context)
+    return render(request, 'generation_meme.html', context=context)
 

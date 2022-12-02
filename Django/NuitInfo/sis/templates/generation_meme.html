@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Génération de mêmes!</h1>
+  <p>L'IA à la rescousse de la génération des mêmes! L'intelligence artificielle a énormément progressée ces dernières années. Il est désormais possible de générer des images inspirées d'un texte.</p>
+  <p>Décrivez l'image, l'IA la générera pour vous, et ajouter une courte description ! Avec cet outils il devient aisé de soutenir l'association Sida Info Services!</p>
+    
+  <form action="/sis/generation_meme/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Générer">
+  </form>
+
+  {% if image_url %}
+  {% load static %}
+  <img class="fit-picture"
+      src="{% static image_url %}"
+      alt="Image générée par OPENAI">
+  {% endif %}
+{% endblock %}
