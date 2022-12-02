@@ -170,8 +170,8 @@ def plot_map(df, column_to_use, pal, title):
     df[column_to_use] = x
     df = df.assign(LogScaled=np.log10(x))
 
-    fig = px.choropleth(df, locations=df['Country'], locationmode='country names', 
-                  color='LogScaled', hover_data={'Country': True,'LogScaled' : False, column_to_use : True},
+    fig = px.choropleth(df, locations=df['Pays'], locationmode='country names', 
+                  color='LogScaled', hover_data={'Pays': True,'LogScaled' : False, column_to_use : True},
                   title=title, color_continuous_scale=pal, width=1500, projection="natural earth")
     
     return fig
