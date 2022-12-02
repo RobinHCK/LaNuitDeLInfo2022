@@ -5,6 +5,12 @@ import matplotlib
 import os
 import random
 
+import chart_studio
+import chart_studio.plotly as py
+import chart_studio.tools as tls
+import plotly.io as pio
+import plotly.express as px
+
 font = {'weight' : 'bold',
         'size'   : 22}
 
@@ -145,3 +151,35 @@ def plot_stats_art_children(df, colors, column_art_recieving='Reported number of
 
     plt.savefig(output_dir + 'ART/ART_children_regions.svg')
     plt.savefig(output_dir + 'ART/ART_children_regions.png')
+
+
+def upload_chart(fig, filename):
+    py.plot(fig, filename = filename, auto_open=True)
+
+def generate_iframe(url):
+    return tls.get_embed(url)
+
+def write_html(fig, file):
+    pio.write_html(fig, file=file, auto_open=True)
+
+def plot_map(df, column_to_use, pal, title):
+
+    # df[column_to_use] = np.asarray(df[column_to_use], dtype=np.float128)
+    x = np.asarray(df[column_to_use], dtype=np.int32)
+    # x = np.log10(x)
+    df[column_to_use] = x
+    df = df.assign(LogScaled=np.log10(x))
+
+    fig = px.choropleth(df, locations=df['Country'], locationmode='country names', 
+                  color='LogScaled', hover_data={'Country': True,'LogScaled' : False, column_to_use : True},
+                  title=title, color_continuous_scale=pal, width=1500, projection="natural earth")
+    
+    return fig
+
+def upload_credentials():
+
+    username = "izadeelvin99"
+    api_key = "SNYTOtwDQTKfZjGhSEyR"
+
+    chart_studio.tools.set_credentials_file(username=username, 
+    api_key=api_key)
