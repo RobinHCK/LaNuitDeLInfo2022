@@ -2,6 +2,19 @@
 
 {% block content %}
   <h1>Nuit de l'Info 2022 feat Sida Info Service</h1>
-  <p>Bienvenue sur notre site de <em>Prévention</em>!</p>
-  <p>Ici vous trouverez des infos, et pleins d'autres choses pas encore développées...</p>
+  <p>
+    Bienvenue sur notre site créé lors de la <a href="https://www.nuitdelinfo.com/">Nuit de l'Info 2022</a>.<br>
+    Ce site à pour objectif de faire de la prévention autour du VIH et du SIDA afin d'aider l'association <a href="https://www.sida-info-service.org/">Sida Info Services</a>.
+  </p>
+  <p>Dans la page <a href="{% url 'data_story' %}">Data Story</a>, nous avons exploité des bases de données libre de droits afin de réaliser des graphique et d'informer autour de ces maladies.</p>
+  <p>
+    Dans la page <a href="{% url 'predictions_IA' %}">Prédiction IA</a>, nous avons entraîné un IA afin de déterminer les futures espérances de vie des patients atteints du SIDA. <br>
+    Nos IAs ont l'air plutôt optimistes, alors pourquoi ne pas dédramatiser autour de cette maladie ?
+  </p>
+  <p>
+    Nous avons également une page <a href="{% url 'generation_meme' %}">Génération de même</a> qui permet de créer des mêmes avec le filigrane de l'association afin de partager et communiquer.
+  </p>
+  <p>
+    Finalement, un page <a href="{% url 'equipe' %}">Notre équipe</a> présente les diférents membres qui ont travaillé sur ce projet!
+  </p>
 {% endblock %}

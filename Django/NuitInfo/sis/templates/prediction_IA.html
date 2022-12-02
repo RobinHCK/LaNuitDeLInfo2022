@@ -1,0 +1,34 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Prédiction d'une Intelligence Artificielle</h1>
+
+  <p>
+    L'espérance de vie des patients atteints du SIDA est sans cesse en train d'augmenter. <br>
+    Nous avons entraîné une modèle d'IA afin d'essayer de prédire cette espérance de vie pour les années à venir
+  </p>
+  <p>
+    Nous avons utilisé le jeu de données open-source suivant : <a href="https://www.kaggle.com/datasets/programmerrdai/hiv-aids?select=life-expectancy.csv">Lien Kaggle</a>. <br>
+    Il a été proposé pour la première fois par M Roser et al.
+  </p>
+  <p>
+      L'ensemble de données fournit l'espérance de vie du VIH SIDA changeant par rapport à l'année. Ces informations sont fournies par pays. <br>
+      Les échantillons de cet ensemble de données peuvent être représentés sous forme de séries chronologiques. <br>
+      Pour ce dernier, un modèle de prévision peut être appris sur le jeu de données afin de prédire dans le futur l'espérance de vie des patients VIH SIDA.
+  </p>
+  <p>
+      De nombreux modèles de prévision peuvent être utilisés, dans ce cas un réseau de neurones LSTM a été utilisé pour résoudre cette tâche. <br>
+      Le réseau de neurones se compose d'une couche LSTM avec 3 unités suivies d'une couche entièrement connectée fournissant la prédiction d'un horodatage futur.
+  </p>
+  <p>
+    Le modèle a été implémenté dans Tensorflow Keras. Les séries chronologiques d'entrée ont été normalisées afin d'avoir une moyenne de 0 et un écart type de 1. <br>
+    Le modèle a été formé en utilisant une taille de lot de 32 pour 500 époques à l'aide d'un optimiseur Adam et d'une perte d'erreur quadratique moyenne.
+  </p>
+    Pour la phase de prédiction, 20 horodatages ont été prédits. Chaque horodatage prédit est utilisé pour prédire le suivant. <br>
+    Les résultats ont montré que le modèle a appris différents modèles et a pu prédire qu'à l'avenir, certains pays auront la même espérance de vie et certains auront en fait un âge d'espérance de vie plus élevé.
+  <p>
+
+    <div class="div-plots">
+        <iframe class="plots-plotly" frameborder="0" scrolling="no" src="//plotly.com/~izadeelvin99/80.embed?height=500"></iframe>
+    </div>
+{% endblock %}

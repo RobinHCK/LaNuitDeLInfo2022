@@ -3,28 +3,62 @@
 {% block content %}
   <h1>Data Story: Le Sida dans le monde</h1>
 
-  <p>Second graphique</p>
+  <p>
+    Nous avons utilisé une base de données publique présente sur <a href="https://www.kaggle.com/datasets/imdevskp/hiv-aids-dataset">Kaggle</a>.
+    A partir de ces données nous avons pu connaitre :
+  </p>
+  <ul>
+    <li>Le nombre de malades du VIH SIDA pour chaque pays</li>
+    <li>Le nombre de patients recevant la thérapie anti-rétrovirale</li>
+  </ul>
 
-  <div class="div-plots">
-    <iframe class="plots-plotly" frameborder="0" scrolling="no" src="//plotly.com/~izadeelvin99/24.embed?height=500"></iframe>
-  </div>
 
-  <p>Quatrième graphique</p>
+  <p>
+    Ces informations sont fournies pour plus de 100 pays et 6 régions différentes : Méditerranée orientale, Europe, Afrique, Amériques, Pacifique occidental et Asie du Sud-Est.
+    Ce jeu de données à pu être créé grâce à la participation de :
+  </p>
+  <ul>
+    <li>L'OMS <a href="https://www.who.int/hiv/data/en/">Lien</a></li>
+    <li>L'UNICEF <a href="https://data.unicef.org/resources/dataset/hiv-aids-statistical-tables/">Lien</a></li>
+  </ul>
+
+  <p>
+    La carte ci-dessous représente la répartition du nombre de patients atteints du VIH/SIDA dans le monde. <br>
+    Les valeurs fournies sont affichées en échelle log afin d'avoir un équilibre dans la carte des couleurs. <br>
+    On peut remarquer que les principaux foyers du SIDA sont situé dans le sud de l'Afrique, au Brésil ou encore aux Etats-Unis.<br>
+    Les pays pour dont les données ne sont pas fournis, sont représentés en gris.
+  </p>
 
   <div class="div-plots">
     <iframe class="plots-plotly" frameborder="0" scrolling="no" src="//plotly.com/~izadeelvin99/46.embed?height=500"></iframe>
   </div>
 
+  <p>
+    Cette carte du monde montre la répartition du nombre de personnes sous traitement antirétroviral sur l'ensemble du globe. <br>
+    Nous notons qu'une majeur partie des personnes recevant ce traitement sont originaires des pays déterminés au dessus, ou l'incidence est la plus importance. <br>
+    En comparant les valeurs des deux cartes, nous pouvons déterminer approximativement le nombre de personnes qui n'ont malheureusement pas accès à ce traitement.
+  </p>
+
   <div class="div-plots">
-    <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~izadeelvin99/52.embed"></iframe>
+    <iframe class="plots-plotly" frameborder="0" scrolling="no" src="//plotly.com/~izadeelvin99/24.embed?height=500"></iframe>
   </div>
-  
+
+  <p>
+    L'histogramme ci-dessous présente le nombre de personnes atteintes du SIDA en France entre 2015 et 2020. <br>
+    Ces données ont été obtenues à l'aide de la base de données <a href="https://www.data.gouv.fr/fr/datasets/effectif-de-patients-par-pathologie-sexe-classe-dage-et-territoire-departement-region/#resources">Data-Gouv</a>, recensant l'ensemble des pathologies en France. <br>
+    Nous remarquons que les valeurs sont stables avec une très légère hausse.
+  </p>
+
   <div class="div-plots">
-    <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~izadeelvin99/58.embed"></iframe>
+    <iframe class="plots-plotly" frameborder="0" scrolling="no" src="//plotly.com/~izadeelvin99/58.embed?height=500"></iframe>
   </div>
-  
+
+  <p>
+    L'histogramme ci-dessous présente le nombre de personnes atteintes du SIDA en France pour chaque tranche d'âge. <br>
+  </p>
+
   <div class="div-plots">
-    <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~izadeelvin99/60.embed"></iframe>
+    <iframe class="plots-plotly" frameborder="0" scrolling="no" src="//plotly.com/~izadeelvin99/82.embed?height=500"></iframe>
   </div>
 
 {% endblock %}

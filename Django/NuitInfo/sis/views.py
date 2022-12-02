@@ -62,3 +62,6 @@ def generation_meme(request):
     context['form'] = ImageGeneratorForm()
     return render(request, 'generation_meme.html', context=context)
 
+def predictions_ia(request):
+    context = {}
+    return render(request, 'prediction_IA.html', context=context)
