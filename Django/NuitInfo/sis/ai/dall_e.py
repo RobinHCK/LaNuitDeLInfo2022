@@ -6,7 +6,7 @@ import requests
 import openai
 from PIL import Image, ImageDraw, ImageFont
 
-OPENAI_KEY = "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"
+OPENAI_KEY = "PUT-YOUR-OWN-KEY"
 PATH_STATIC         = "./sis/static/"
 PATH_LOGO_GENERATED = "logos_generated/"
 PATH_LOGO_SIS		= "logo_sis/logo_sida_{}.png"
